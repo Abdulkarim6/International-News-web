@@ -4,3 +4,8 @@ ul{
 .card{
     margin-bottom: 10px;
 }
+.blogerImg{
+    height: 50px;
+    width: 50px;
+    border-radius: 50px;
+}
