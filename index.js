@@ -28,9 +28,13 @@ const loadAllNews = (news_id) => {
 const displayNews = (datas) => {
     //  console.log(datas);
     // console.log(datas.length);
-    const newsAlert = document.getElementById('newsAlert')
+    const blogItemNumber = document.getElementById("blogItemNumber");
+          blogItemNumber.innerHTML = `
+              <h4> ${datas.length} items found for category Entertainment </h4>
+          `
+    const newsAlert = document.getElementById('newsAlert');
     if (datas.length === 0) {
-        newsAlert.classList.remove("d-none")
+        newsAlert.classList.remove("d-none");
     }
     else {
         newsAlert.classList.add("d-none")
@@ -95,7 +99,7 @@ const displayDetails = (datas) => {
         const blogDetailBody = document.getElementById('blogDetailBody');
         blogDetailBody.innerHTML = `
              <img class="blogerImg" src="${data.author.img}" alt="">
-            <h4> Author : ${data.author.name}</h4>
+            <h4> Author : ${data.author.name ? data.author.name : "No Name" }</h4>
             <p class="mb-0"> Published_date : ${data.author.published_date}</p>
 
         `
