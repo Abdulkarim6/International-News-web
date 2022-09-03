@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+
+<body class="container">
+    <section>
+        <a href="index.html"><button type="button" class="btn btn-primary mt-4">Go Home</button></a>
+    </section>
+    <section id="blogContainer" class="mt-4">
+        <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        What is the difference between bar, let and constant?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                       <p><strong>var:</strong> It can be updated and re-declared into the scope.</p>  
+                       <p><strong>let:</strong> It can be updated but cannot be re-declared into the scope.</p>  
+                       <p><strong>const:</strong> The scope of a const variable is block scope.</p>  
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        What is the difference between array function and regular function?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p><strong>array function:</strong> An array formula is a formula that can perform multiple calculations on one or more items in an array. You can think of an array as a row or column of values, or a combination of rows and columns of values. Array formulas can return either multiple results, or a single result.</p>  
+                        <p><strong>regular function:</strong> In mathematics, a regular function in the sense of algebraic geometry is an everywhere-defined, polynomial function on an algebraic variety V with values in the field K over which V is defined..</p>  
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        What is the difference between map, foreach, filter and find?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                        <p><strong>forEach:</strong>If you’re not familiar with the array method .forEach(), whenever you go to iterate over an array you probably immediately think of a for loop.</p>
+                        <p><strong>filter</strong>Whenever you have to filter an array Javascript inbuilt method to filter your array is the right choice to use. Filter let you provide a callback for every element and returns a filtered array.</p>
+                        <p><strong>Map:</strong>Map like filter & foreach takes a callback and run it against every element on the array but whats makes it unique is it generate a new array based on your existing array.</p>
+                        <p><strong>find:</strong>Function .find() is also a search function like the previous but they differ in one small detail — this function returns only one match in an array. If in an array is more than one result, the function will return the first that has matched.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingfour">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapsefour" aria-expanded="false" aria-controls="collapsefour">
+                        Why use template string?
+                    </button>
+                </h2>
+                <div id="collapsefour" class="accordion-collapse collapse" aria-labelledby="headingfour"
+                    data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                       <p><strong>template string:</strong> we can use template strings to write your string exactly how you want it to appear, without all the quotation marks and confusion. Template strings make it very easy to spot a missing space and make your string more readable.</p> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- js file link -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
