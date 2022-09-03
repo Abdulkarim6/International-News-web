@@ -1,10 +1,12 @@
+/* load all news categories */
 const loadCategory = () => {
     const url = ` https://openapi.programming-hero.com/api/news/categories`
     fetch(url)
-        .then(res => res.json())
-        .then(data => displayCategory(data.data.news_category))
+    .then(res => res.json())
+    .then(data => displayCategory(data.data.news_category))
+    .catch(error => console.log(error))
 }
-
+/* display All news categories  */
 const displayCategory = (categorys) => {
     categorys.forEach(category => {
         // console.log(category);
@@ -16,22 +18,26 @@ const displayCategory = (categorys) => {
         ulCon.appendChild(li);
     });
 }
-
+/* load all news by dynamicly */
 const loadAllNews = (news_id) => {
+    /* loder spinner start */
+    toggelSpinner(true);
     // console.log(news_id);
     const url = `https://openapi.programming-hero.com/api/news/category/0${news_id}`
     fetch(url)
         .then(res => res.json())
         .then(data => displayNews(data.data))
 }
-
+/* display all news by dynamicly */
 const displayNews = (datas) => {
     //  console.log(datas);
     // console.log(datas.length);
+    /* news items number */
     const blogItemNumber = document.getElementById("blogItemNumber");
-          blogItemNumber.innerHTML = `
+    blogItemNumber.innerHTML = `
               <h4> ${datas.length} items found for category Entertainment </h4>
           `
+    /* news found alert */
     const newsAlert = document.getElementById('newsAlert');
     if (datas.length === 0) {
         newsAlert.classList.remove("d-none");
@@ -43,7 +49,6 @@ const displayNews = (datas) => {
     newsContainer.innerHTML = ``;
     datas.forEach(data => {
         // console.log(data);
-
         const newsDiv = document.createElement("div");
         newsDiv.classList.add("card");
         newsDiv.innerHTML = `
@@ -66,7 +71,7 @@ const displayNews = (datas) => {
                                 </div>
                                 <div class="d-flex align-items-center">
                                      <i class="fa-regular fa-eye"></i>
-                                     <p class= "mb-0"> ${data.total_view} </p>
+                                     <p class= "mb-0 ms-2"> ${data.total_view} </p>
                                 </div>
                                 <div>
                                <button onclick="getDetails('${data._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogDetailModal">Details</button>
@@ -78,18 +83,21 @@ const displayNews = (datas) => {
         newsContainer.appendChild(newsDiv);
 
     });
+    /* loder spinner stop */
+    toggelSpinner(false);
 }
-
-const getDetails = (detailsId) =>{
+/* load news detail */
+const getDetails = (detailsId) => {
+    
     // console.log('button clicked');
     // console.log(detailsId);
     const url = `https://openapi.programming-hero.com/api/news/${detailsId}`
     // console.log(url);
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayDetails(data.data))
+        .then(res => res.json())
+        .then(data => displayDetails(data.data))
 }
-
+/* display news detail */
 const displayDetails = (datas) => {
     // console.log(datas);
     datas.forEach(data => {
@@ -99,14 +107,22 @@ const displayDetails = (datas) => {
         const blogDetailBody = document.getElementById('blogDetailBody');
         blogDetailBody.innerHTML = `
              <img class="blogerImg" src="${data.author.img}" alt="">
-            <h4> Author : ${data.author.name ? data.author.name : "No Name" }</h4>
+            <h4> Author : ${data.author.name ? data.author.name : "No Name"}</h4>
             <p class="mb-0"> Published_date : ${data.author.published_date}</p>
-
         `
     });
 
 }
-
+/* function for spinner */
+const toggelSpinner = isloading => {
+    const spinner = document.getElementById('spinner');
+    if (isloading) {
+        spinner.classList.remove("d-none")
+    }
+    else {
+        spinner.classList.add("d-none")
+    }
+}
 
 
 loadCategory();

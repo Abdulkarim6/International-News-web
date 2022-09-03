@@ -33,6 +33,13 @@
         <!-- All menuber section end -->
     </header>
     <main class="container">
+        <!-- spinner section start -->
+        <section id="spinner" class="d-flex justify-content-center d-none"></div>
+            <div class="spinner-border text-primary mb-4 mt-5" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </section>
+        <!-- spinner section end -->
         <!-- Blog number count start -->
         <section>
             <h4 id="blogItemNumber" class="bg-white p-2"> 0 items found for category Entertainment </h4>
@@ -46,8 +53,8 @@
         </section>
         <!-- All news section end -->
         <!-- News found alert start -->
-        <section id="newsAlert" class="d-none">
-            <h1>no news found</h1>
+        <section id="newsAlert" class="d-none mt-3 p-2 bg-warning text-dark rounded">
+            <h3>Currently, no news has been published in this regard</h3>
         </section>
         <!-- News found alert end -->
 
@@ -55,7 +62,8 @@
         <!-- Button trigger modal -->
 
         <!-- Modal -->
-        <div class="modal fade" id="blogDetailModal" tabindex="-1" aria-labelledby="blogDetailModalLabel" aria-hidden="true">
+        <div class="modal fade" id="blogDetailModal" tabindex="-1" aria-labelledby="blogDetailModalLabel"
+            aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -63,7 +71,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div id="blogDetailBody" class="modal-body">
-                        
+
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
