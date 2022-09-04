@@ -13,7 +13,8 @@ const displayCategory = (categorys) => {
         const ulCon = document.getElementById('ul-con');
 
         const li = document.createElement("li");
-        li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none h5"> ${category.category_name} </a>`;
+        li.classList.add("list");
+        li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none h6"> ${category.category_name} </a>`;
 
         ulCon.appendChild(li);
     });
@@ -31,8 +32,8 @@ const loadAllNews = (news_id) => {
 /* display all news by dynamicly */
 const displayNews = (datas) => {
     //  console.log(datas);
-    const sort = datas.sort();
-    console.log(sort);
+    // const sort = datas.sort();
+    // console.log(sort);
     // console.log(datas.length);
     /* news items number */
     const cetagoryItemNumber = document.getElementById("cetagoryItemNumber");
@@ -49,7 +50,7 @@ const displayNews = (datas) => {
     }
     const newsContainer = document.getElementById("newsContainer");
     newsContainer.innerHTML = ``;
-    sort.forEach(data => {
+    datas.forEach(data => {
         // console.log(data);
         const newsDiv = document.createElement("div");
         newsDiv.classList.add("card");
@@ -61,7 +62,7 @@ const displayNews = (datas) => {
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title">${data.title}</h5>
-                            <p class="card-text">${data.details.slice(0, 300)} ... </p>
+                            <p class="card-text mt-5">${data.details.slice(0, 300)} ... </p>
                             <div class="d-flex align-items-center justify-content-around mt-4">
 
                                 <div class="d-flex align-items-center" >
@@ -127,5 +128,5 @@ const toggelSpinner = isloading => {
 }
 
 
-
+loadAllNews(04);
 loadCategory();

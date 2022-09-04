@@ -18,9 +18,10 @@
         <nav class="navbar mt-3 mb-1">
             <div class="container-fluid">
                 <h2><span class="bg-primary text-white p-1 rounded">International</span> News</h2>
-                <div class="d-flex justify-content-between w-25" role="search">
+                <div class="d-flex justify-content-between align-items-center w-25" role="search">
                     <h4 class="text-primary">News</h4>
-                    <a href="blog.html"><button id="blogsFAQ" type="button" class="btn btn-primary px-4">Blog</button></a>
+                    <a href="blog.html"><button id="blogsFAQ" type="button"
+                            class="btn btn-primary px-4">Blog</button></a>
                 </div>
             </div>
         </nav>
@@ -34,7 +35,8 @@
     </header>
     <main class="container">
         <!-- spinner section start -->
-        <section id="spinner" class="d-flex justify-content-center d-none"></div>
+        <section id="spinner" class="d-flex justify-content-center d-none">
+            </div>
             <div class="spinner-border text-primary mb-4 mt-5" role="status">
                 <span class="visually-hidden">Loading...</span>
             </div>
@@ -45,6 +47,24 @@
             <h4 id="cetagoryItemNumber" class="bg-white p-2"> 0 items found for category Entertainment </h4>
         </section>
         <!-- Blog number count end -->
+        <!-- sort view section start -->
+        <section class="d-flex align-items-center justify-content-between mt-3 mb-3 ">
+            <div class="d-flex align-items-center ">
+                    <h5>Sort By View : </h5>
+                    <button class="btn btn-outline-secondary dropdown-toggle ms-2" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">Dropdown</button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Action</a></li>
+                        <li><a class="dropdown-item" href="#">Another action</a></li>
+                        <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary">Primary</button>
+                <button type="button" class="btn btn-outline-primary">Primary</button>
+            </div>
+        </section>
+        <!-- sort view section end -->
         <!-- All news section start -->
         <section>
             <div id="newsContainer">
