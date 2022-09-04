@@ -17,6 +17,7 @@ const displayCategory = (categorys) => {
         li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none h6"> ${category.category_name} </a>`;
 
         ulCon.appendChild(li);
+
     });
 }
 /* load all news by dynamicly */
@@ -32,8 +33,7 @@ const loadAllNews = (news_id) => {
 /* display all news by dynamicly */
 const displayNews = (datas) => {
     //  console.log(datas);
-    // const sort = datas.sort();
-    // console.log(sort);
+        datas.sort((a, b) => b.total_view - a.total_view);
     // console.log(datas.length);
     /* news items number */
     const cetagoryItemNumber = document.getElementById("cetagoryItemNumber");
