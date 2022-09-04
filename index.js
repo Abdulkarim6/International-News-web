@@ -13,7 +13,7 @@ const displayCategory = (categorys) => {
         const ulCon = document.getElementById('ul-con');
 
         const li = document.createElement("li");
-        li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none"> ${category.category_name} </a>`;
+        li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none h5"> ${category.category_name} </a>`;
 
         ulCon.appendChild(li);
     });
@@ -56,7 +56,7 @@ const displayNews = (datas) => {
         newsDiv.innerHTML = `
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <img src="${data.thumbnail_url}" class="img-fluid rounded-start" alt="...">
+                        <img src="${data.thumbnail_url}" class="img-fluid rounded-start w-100" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
@@ -64,16 +64,16 @@ const displayNews = (datas) => {
                             <p class="card-text">${data.details.slice(0, 300)} ... </p>
                             <div class="d-flex align-items-center justify-content-around mt-4">
 
-                                <div class="d-flex align-items-center w-50 " >
+                                <div class="d-flex align-items-center" >
                                     <img class="blogerImg" src="${data.author.img}" alt="">
-                                    <div>
+                                    <div class = "ms-2">
                                         <h4>${data.author.name}</h4>
                                         <p class="mb-0">${data.author.published_date}</p>
                                     </div>
                                 </div>
                                 <div class="d-flex align-items-center">
                                      <i class="fa-regular fa-eye"></i>
-                                     <p class= "mb-0 ms-2"> ${data.total_view} </p>
+                                     <p class= "mb-0 ms-1"> ${data.total_view} </p>
                                 </div>
                                 <div>
                                <button onclick="getDetails('${data._id}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#blogDetailModal">Details</button>
@@ -126,61 +126,6 @@ const toggelSpinner = isloading => {
     }
 }
 
-/* blogs frequently asked question start */
-document.getElementById("blogsFAQ").addEventListener("click", function () {
-    console.log("blog for ok");
 
-    const div = document.createElement("div");
-    div.innerHTML = `
-        
-        <div class="accordion" id="accordionExample">
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingOne">
-      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-        Accordion Item #1
-      </button>
-    </h2>
-    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingTwo">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-        Accordion Item #2
-      </button>
-    </h2>
-    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-  <div class="accordion-item">
-    <h2 class="accordion-header" id="headingThree">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-        Accordion Item #3
-      </button>
-    </h2>
-    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-      <div class="accordion-body">
-        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
-      </div>
-    </div>
-  </div>
-</div>
-        
-        
-        `
-
-
-
-
-
-
-})
-/* blogs frequently asked question end */
 
 loadCategory();
