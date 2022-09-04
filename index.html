@@ -12,30 +12,29 @@
 </head>
 
 <body class="bg-light">
-
     <header class="headerContainer">
         <!-- header menu start -->
         <nav class="navbar mt-3 mb-1">
             <div class="container-fluid">
-                <h2><span class="bg-primary text-white p-1 rounded">International</span> News</h2>
+                <h3><span class="bg-primary text-white p-1 rounded">International</span> News</h3>
                 <div class="d-flex justify-content-between align-items-center w-25" role="search">
-                    <h4 class="text-primary">News</h4>
+                    <h3 class="text-primary me-1">News</h3>
                     <a href="blog.html"><button id="blogsFAQ" type="button"
-                            class="btn btn-primary px-4">Blog</button></a>
+                            class="btn btn-primary px-2">Blog</button></a>
                 </div>
             </div>
         </nav>
         <!-- header menu end -->
         <hr class="mx-auto mt-2">
 
-        <!-- All menuber section start -->
-        <ul class="d-flex justify-content-between w-100" id="ul-con">
+        <!-- All cetagories menuber section start -->
+        <ul class="" id="ul-con">
 
         </ul>
-        <!-- All menuber section end -->
+        <!-- All cetagories menuber section end -->
 
     </header>
-    <main class="container">
+    <main class="container mb-3">
         <!-- spinner section start -->
         <section id="spinner" class="d-flex justify-content-center d-none">
             </div>
@@ -57,20 +56,18 @@
                     aria-expanded="false">Dropdown</button>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Top view</a></li>
-                    <li><a class="dropdown-item" href="#">Medium view</a></li>
-                    <li><a class="dropdown-item" href="#">Low view</a></li>
                 </ul>
             </div>
             <div>
-                <button type="button" class="btn btn-primary">Primary</button>
-                <button type="button" class="btn btn-outline-primary">Primary</button>
+                <button type="button" class="btn btn-primary">Today’s Pick</button>
+                <button type="button" class="btn btn-outline-primary">Trending</button>
             </div>
         </section>
         <!-- sort view section end -->
         <!-- All news section start -->
         <section>
             <div id="newsContainer">
-
+              <!-- news added by js -->
             </div>
         </section>
         <!-- All news section end -->
@@ -79,7 +76,6 @@
             <h3>Currently, no news has been published in this regard</h3>
         </section>
         <!-- News found alert end -->
-
         <!-- Modal section start -->
         <!-- Modal -->
         <div class="modal fade" id="blogDetailModal" tabindex="-1" aria-labelledby="blogDetailModalLabel"
@@ -91,7 +87,7 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div id="blogDetailBody" class="modal-body">
-
+                          <!-- modal body added by js -->
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -101,7 +97,6 @@
         </div>
         <!-- Modal section end -->
     </main>
-
     <!-- js file link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"

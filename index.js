@@ -9,22 +9,17 @@ const loadCategory = () => {
 /* display All news categories  */
 const displayCategory = (categorys) => {
     categorys.forEach(category => {
-        // console.log(category);
         const ulCon = document.getElementById('ul-con');
-
         const li = document.createElement("li");
         li.classList.add("list");
         li.innerHTML = `<a onclick= "loadAllNews(${category.category_id})" href="#" class="text-decoration-none h6"> ${category.category_name} </a>`;
-
         ulCon.appendChild(li);
-
     });
 }
 /* load all news by dynamicly */
 const loadAllNews = (news_id) => {
     /* loder spinner start */
     toggelSpinner(true);
-    // console.log(news_id);
     const url = `https://openapi.programming-hero.com/api/news/category/0${news_id}`
     fetch(url)
         .then(res => res.json())
@@ -34,7 +29,6 @@ const loadAllNews = (news_id) => {
 const displayNews = (datas) => {
     //  console.log(datas);
         datas.sort((a, b) => b.total_view - a.total_view);
-    // console.log(datas.length);
     /* news items number */
     const cetagoryItemNumber = document.getElementById("cetagoryItemNumber");
     cetagoryItemNumber.innerHTML = `
@@ -84,25 +78,19 @@ const displayNews = (datas) => {
                 </div>
        `
         newsContainer.appendChild(newsDiv);
-
     });
     /* loder spinner stop */
     toggelSpinner(false);
 }
 /* load news detail */
 const getDetails = (detailsId) => {
-
-    // console.log('button clicked');
-    // console.log(detailsId);
     const url = `https://openapi.programming-hero.com/api/news/${detailsId}`
-    // console.log(url);
     fetch(url)
         .then(res => res.json())
         .then(data => displayDetails(data.data))
 }
 /* display news detail */
 const displayDetails = (datas) => {
-    // console.log(datas);
     datas.forEach(data => {
         // console.log(data);
         const blogDetailModalLabel = document.getElementById('blogDetailModalLabel')
@@ -110,11 +98,10 @@ const displayDetails = (datas) => {
         const blogDetailBody = document.getElementById('blogDetailBody');
         blogDetailBody.innerHTML = `
              <img class="blogerImg" src="${data.author.img}" alt="">
-            <h4> Author : ${data.author.name ? data.author.name : "No Name"}</h4>
+            <h4> Author : ${data.author.name ? data.author.name : "No Name Found"}</h4>
             <p class="mb-0"> Published_date : ${data.author.published_date}</p>
         `
     });
-
 }
 /* function for spinner */
 const toggelSpinner = isloading => {
