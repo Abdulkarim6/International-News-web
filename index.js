@@ -32,7 +32,7 @@ const displayNews = (datas) => {
     /* news items number */
     const cetagoryItemNumber = document.getElementById("cetagoryItemNumber");
     cetagoryItemNumber.innerHTML = `
-              <h4> ${datas.length} items found for category Entertainment </h4>
+              <h4> ${datas.length} items found for in this category  </h4>
           `
     /* news found alert */
     const newsAlert = document.getElementById('newsAlert');
@@ -98,7 +98,7 @@ const displayDetails = (datas) => {
         const blogDetailBody = document.getElementById('blogDetailBody');
         blogDetailBody.innerHTML = `
              <img class="blogerImg" src="${data.author.img}" alt="">
-            <h4> Author : ${data.author.name ? data.author.name : "No Name Found"}</h4>
+            <h4> Author : ${data.author.name ? data.author.name : "No Name found"}</h4>
             <p class="mb-0"> Published_date : ${data.author.published_date}</p>
         `
     });
